@@ -1,3 +1,104 @@
+* {
+    --main-color:#fff;
+    --second-color: #4169E1;
+    --main-background-color:#000;
+    --main-font:"Work Sans", sans-serif;
+}
+
+
+
 html {
-    background-color: #333;
+    background-color: var(--main-background-color);
+    font-family: var(--main-font) ;
+    color: var(--main-color);
+    /* cursor: none; */
+
+}
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 70%;
+}
+@media (max-width:1140px){
+    .container {
+        width: 70%;
+        
+    }
+}
+
+
+
+header{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    /* background-color: red; */
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1.7rem;    
+    
+}
+
+header  a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 17px;
+    transition: 0.2s ease-in-out ;
+}
+
+header a:hover {
+    color: var(--second-color);
+    transform: scale(0.99);
+    
+}
+
+/* end  header  */
+
+
+
+
+
+
+/* js class */
+
+#trailer {
+    height: 30px;
+    width: 30px;
+    border: 2px solid var(--second-color);
+    border-radius: 50% ;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    pointer-events: none;
+    opacity: 0;
+}
+#trailer-point {
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 901;
+    pointer-events: none;
+    background-color: var(--second-color);
+    opacity: 0;
+}
+
+
+.hover-effext {
+    border: 0.5px solid red;
+
+    
 }
