@@ -1,4 +1,4 @@
-* {
+:root  {
     --main-color:#fff;
     --second-color: #4169E1;
     --main-background-color:#000;
@@ -11,13 +11,14 @@ html {
     background-color: var(--main-background-color);
     font-family: var(--main-font) ;
     color: var(--main-color);
-    /* cursor: none; */
 
 }
 body {
     display: flex;
     justify-content: center;
     height: 100vh;
+
+
 }
 
 
@@ -26,26 +27,26 @@ body {
 }
 @media (max-width:1140px){
     .container {
-        width: 70%;
-        
+        width: 90%;
     }
 }
 
 
-
+/* start header  */
 header{
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
-    /* background-color: red; */
 }
 
 header ul {
     list-style: none;
     display: flex;
-    gap: 1.7rem;    
+    gap: 1.7rem;   
+
+    transition: 1s;
     
 }
 
@@ -62,8 +63,162 @@ header a:hover {
     
 }
 
+.menu-icon {
+    display: none;
+}
+
+
+.block {
+    display: flex;
+    opacity: 1;
+    gap: 0.9rem;
+
+}
+
+
+@media (max-width:1140px){
+    header ul {
+        opacity: 0;
+        position: absolute;
+        right: 10%;
+        top: 14%;
+        align-items: end;
+        gap: 0rem;
+        transition: all 1s ;
+        background-color: var(--main-background-color);
+    }
+    header ul {
+        flex-direction: column ;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .hamRotate.active {
+        transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+        transform: rotate(180deg);
+    }
+    .line {
+        fill:none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: var(--main-color);
+        stroke-width:5.5;
+        stroke-linecap:round;
+    }
+    
+    .ham8 .top {
+        stroke-dasharray: 40 160;
+    }
+    .ham8 .middle {
+        stroke-dasharray: 40 142;
+        transform-origin: 50%;
+        transition: transform 400ms;
+    }
+    .ham8 .bottom {
+        stroke-dasharray: 40 85;
+        transform-origin: 50%;
+        transition: transform 400ms, stroke-dashoffset 400ms;
+    }
+    .ham8.active .top {
+        stroke-dashoffset: -64px;
+    }
+    .ham8.active .middle {
+        
+        transform: rotate(90deg);
+    }
+    .ham8.active .bottom {
+        stroke-dashoffset: -64px;
+    }
+    
+
+}
+
 /* end  header  */
 
+/* start home  */
+
+#home {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction:column;
+    height: 80dvh;
+    overflow:hidden ;
+    
+}
+
+#home .name {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#home .can-do {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+#home .can-do .skills {
+    display:  flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 160px;
+    height: 33px;
+    scrollbar-width:none;
+    overflow: scroll;
+
+}
+#home .botton   {
+    text-align: center;
+    margin: 30px;
+}
+#home .botton a {
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    min-height: 20px;
+    width:159px;
+    padding: 10px 50px;
+    border-radius: 20px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all 0.7s ease-in-out;
+}
+#home .botton:hover a {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+@media (max-width:768px) {
+    #home .name {
+        font-size: 40px;
+    }
+    #home .can-do {
+        font-size: 20px ;
+
+    }
+    #home .botton{
+        font-size: 15px ;
+    }
+    #home .botton a {
+        width: 130px;
+        padding: auto 0 ;
+    }
+    
+}
+
+
+/* end home  */
 
 
 
@@ -97,8 +252,9 @@ header a:hover {
 }
 
 
-.hover-effext {
-    border: 0.5px solid red;
-
-    
+.hover-effect {
+    background-color: var(--second-color);
+    padding: 13px;
 }
+
+
