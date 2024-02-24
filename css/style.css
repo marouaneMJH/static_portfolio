@@ -3,6 +3,8 @@
     --second-color: #4169E1;
     --main-background-color:#000;
     --main-font:"Work Sans", sans-serif;
+    --transform-d: 18s;
+
 }
 
 
@@ -11,14 +13,13 @@ html {
     background-color: var(--main-background-color);
     font-family: var(--main-font) ;
     color: var(--main-color);
+    scrollbar-color: var(--second-color);
 
 }
 body {
     display: flex;
     justify-content: center;
     height: 100vh;
-
-
 }
 
 
@@ -45,7 +46,7 @@ header ul {
     list-style: none;
     display: flex;
     gap: 1.7rem;   
-
+    z-index: 10;
     transition: 1s;
     
 }
@@ -162,27 +163,105 @@ header a:hover {
     font-size: 50px;
     font-weight: bold;
 }
+.l-name{
+    color: var(--second-color);
+    font-style: oblique;
+}
 
-#home .can-do {
+.can-do {
+    display: -webkit-box; /* Safari, iOS, and older versions of Chrome and Firefox */
+    display: -ms-flexbox; /* IE 10 */
     display: flex;
+    -webkit-box-pack: center; /* Safari and older versions of Chrome and Firefox */
+    -ms-flex-pack: center; /* IE 10 */
     justify-content: center;
     font-size: 30px;
+    gap: 0.2rem;
 }
-#home .can-do .skills {
-    display:  flex;
+.can-do span {
+    font-style: italic;
+    opacity: 0.7;
+}
+.skills {
+    display: -webkit-box; /* Safari, iOS, and older versions of Chrome and Firefox */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -webkit-box-orient: vertical; /* Safari and older versions of Chrome and Firefox */
+    -webkit-box-direction: normal; /* Safari and older versions of Chrome and Firefox */
+    -ms-flex-direction: column; /* IE 10 */
     flex-direction: column;
-    gap: 3px;
     width: 160px;
     height: 33px;
-    scrollbar-width:none;
-    overflow: scroll;
+    animation: slide infinite calc(var(--transform-d)/3);
+    -webkit-transform-origin: bottom; /* Safari and older versions of Chrome and Firefox */
+    transform-origin: bottom;
+    border-radius: 3px;
+}
+
+.s1 {
+    animation: s1 infinite var(--transform-d) ;
+    
+}
+.s2 {
+    animation: s2 infinite var(--transform-d) ;
 
 }
-#home .botton   {
+.s3{
+    animation: s3 infinite  var(--transform-d)  ;
+
+}
+@keyframes s1 {
+    0%, 33.333333% {
+        display: block;
+        animation: slide infinite calc(var(--transform-d) / 3);
+    }
+    33.333334%, 100% {
+        display: none;
+    }
+}
+
+@keyframes s2 {
+    0%, 33.3333% {
+        display: none;
+    }
+    33.3334%, 66.6666% {
+        display: block;
+        animation: slide infinite calc(var(--transform-d) / 3);
+    }
+    66.6667%, 100% {
+        display: none;
+    }
+}
+
+@keyframes s3 {
+    0%, 66.6666% {
+        display: none;
+    }
+    66.6667%, 100% {
+        display: block;
+        animation: slide infinite calc(var(--transform-d) / 3);
+    }
+}
+@keyframes slide{
+    0%{
+        transform: rotateX(200deg);
+        opacity: 0;
+    }
+    50% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(-50deg);
+        opacity: 0;
+    }
+}
+
+.botton   {
     text-align: center;
     margin: 30px;
 }
-#home .botton a {
+.botton a {
     font-size: 20px;
     text-decoration: none;
     display: inline-block;
@@ -194,31 +273,80 @@ header a:hover {
     color: var(--main-color);
     transition: all 0.7s ease-in-out;
 }
-#home .botton:hover a {
+.botton:hover a {
     background-color: var(--main-color);
     color: var(--second-color);
 }
 
 @media (max-width:768px) {
-    #home .name {
+    .name {
         font-size: 40px;
     }
-    #home .can-do {
+    .can-do {
         font-size: 20px ;
 
     }
-    #home .botton{
+    .botton{
         font-size: 15px ;
     }
-    #home .botton a {
+    .botton a {
         width: 130px;
         padding: auto 0 ;
     }
     
 }
 
-
 /* end home  */
+
+/* start about  */
+#about {
+    height: 80dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-direction: row;
+}
+#about .info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+#about .can-do  {
+    font-size: 25px;
+    justify-content: start;
+    padding-bottom: 15px;
+    border-bottom: rgba(128, 128, 128, 0.542) 1px dotted ;
+}
+#about img {
+    width: 43%;
+    border-radius:  7px;
+}
+#about p {
+    margin-top: 20px;
+    line-height: 1.7;
+}
+#about .botton  {
+    margin-left: 0px;
+    
+}
+
+@media  (max-width:1140px){
+    #about  {
+        flex-direction: column;
+        justify-content: center;
+        margin-top:200px ;
+        text-align: center;
+    }
+
+    #about img{
+        width: 80%;
+    }
+
+}
+
+
+/* end about  */
 
 
 
@@ -242,7 +370,7 @@ header a:hover {
     height: 4px;
     width: 4px;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     z-index: 901;

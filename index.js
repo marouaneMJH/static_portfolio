@@ -1,3 +1,7 @@
+const secctionsIds=['#home', '#about', '#portfolio', '#news', '#contact'];
+
+Jhidde("#home")
+
 // trailer animation
 
 const trailer=document.getElementById("trailer");
@@ -11,7 +15,7 @@ window.addEventListener("mousemove", el =>{
     trailer.style.transition = '0.06s ease-in-out';
     trailer.style.opacity =" 0.4";
     trailerPoint.style.transform =  `translate(${x+14}px,${y+14}px)`;
-    trailerPoint.style.opacity =" 1";
+    trailerPoint.style.opacity ="1";
 });
 
 // trailer hover effect 
@@ -33,11 +37,28 @@ trailerHover.forEach(el => {
     });
 });
 
+//MENU effect 
 
 document.querySelector(".menu-icon").addEventListener("click", ()=>{
     document.querySelector("header ul").classList.toggle("block");
     
 });
 
+// working with jQuery
 
+// section hidden 
 
+function Jhidde(el){
+    secctionsIds.forEach(e =>{
+        $(`${e}`).hide();
+        
+    })
+
+    $(`${el}`).show();
+    
+}
+
+const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FFA500", "#800080", "#00FFFF", "#FF00FF", "#008080", "#FFC0CB"];
+
+$(":root").get(0).style.setProperty("--second-color", `${colors[Math.floor(Math.random()*colors.length)]}`);
+// console.log(getComputedStyle(document.querySelector(":root")));

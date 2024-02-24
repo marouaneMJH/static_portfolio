@@ -11,9 +11,10 @@
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 </head>
@@ -23,15 +24,16 @@
     <div class="container">
         <!-- start header -->
         <header>
-            <div><em style="font-size: 30px;"><b style="color: red;">M</b>JH</em></div>
+            <div><em style="font-size: 30px;"><b style="color: var(--second-color);">M</b>JH</em></div>
 
             <nav>
-                <ul >
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul>
+
+                    <li><a href="#home" onclick="Jhidde('#home')">Home</a></li>
+                    <li><a href="#about" onclick="Jhidde('#about')">About</a></li>
+                    <li><a href="#portfolio" onclick="Jhidde('#portfolio')">Portfolio</a></li>
+                    <li><a href="#news" onclick="Jhidde('#news')">News</a></li>
+                    <li><a href="#contact" onclick="Jhidde('#contact')">Contact</a></li>
                 </ul>
             </nav>
             <div class="menu-icon" >
@@ -55,20 +57,42 @@
 
             <!-- start home  -->
             <div  id="home">
-                <div><h3 class="name">MAROUANE <em style="color:red;">ELMOUJAHID</em></h3></div>
+                <div><h3 class="name">MAROUANE <span class="l-name">EL MOUJAHID</span></div>
                 <div class="can-do">
                     <span>Creative </span>
                     <div class="skills">
-                        <b> Designer    </b>norm
-                        <b> Developer   </b>
-                        <b> Freelancer  </b>
-                        
+                        <b class="s1">Designer</b>
+                        <b class="s2">Developer</b>
+                        <b class="s3">Freelance</b>
+
                     </div>
                 </div>
-                <div class="botton"><a href="#contact">Get in Touch</a></div>
+
+                <div class="botton"><a href="#contact" onclick="Jhidde('#contact')">Get in Touch</a></div>
             </div>
             <!-- end home  -->
 
+            <!-- start About  -->
+            <div id="about" class="card">
+                <img src="imgs/pexels-pixabay-247899.jpg" alt="" >
+                <div class="info">
+                    <h1>MAROUANE <span class="l-name">ELMOUJAHID</span></h1>
+                    <div class="can-do">
+                        <span>Creative </span>
+                        <div class="skills">
+                            <b class="s1">Designer</b>
+                            <b class="s2">Developer</b>
+                            <b class="s3">Freelance</b>
+
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa architecto dolorem ipsam id hic optio dolorum quae doloremque, quam voluptatem. Nesciunt eum velit aliquid enim officiis est atque suscipit ad.</p>
+
+                    <div class="botton"><a href="#">Learn More</a></div>
+                    
+                </div>
+            </div>
+            <!-- end  About  -->
         </main>
         <!-- end main  -->
 
