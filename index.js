@@ -22,7 +22,7 @@ window.addEventListener("mousemove", el =>{
 
 
 
-const trailerHover=document.querySelectorAll("header > *,#home > .botton");
+const trailerHover=document.querySelectorAll("header > *, .botton, .card");
 console.log(trailerHover);
 trailerHover.forEach(el => {
     el.addEventListener("mouseover", () => {
@@ -58,7 +58,15 @@ function Jhidde(el){
     
 }
 
-const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FFA500", "#800080", "#00FFFF", "#FF00FF", "#008080", "#FFC0CB"];
+const colors = ["#FF0000", 
+                "#00FF00",
+                "#0000FF",
+                "#FFFF00",
+                "#800080",
+                "#00FFFF",
+                "#FF00FF",
+                "#008080"];
 
 $(":root").get(0).style.setProperty("--second-color", `${colors[Math.floor(Math.random()*colors.length)]}`);
-// console.log(getComputedStyle(document.querySelector(":root")));
+
+
