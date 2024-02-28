@@ -51,9 +51,7 @@ document.querySelector(".menu-icon").addEventListener("click", ()=>{
 function Jhidde(el){
     secctionsIds.forEach(e =>{
         $(`${e}`).hide();
-        
     })
-
     $(`${el}`).show();
     
 }
